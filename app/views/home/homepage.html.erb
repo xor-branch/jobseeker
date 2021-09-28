@@ -1,0 +1,157 @@
+  <div class="section homepage" style="background-image: url(<%= asset_path 'img/marten.jpg' %>);">
+    <div class="container py-md">
+      <div class="row row justify-content-between align-items-center">
+        <div class="col-12 text-center">
+          <% if notice %>
+            <%= render partial: 'shared/alerts/dismissible', locals: {
+                  message: notice,
+                  icon_class: 'ni ni-like-2',
+                  alert_type: 'alert-success',
+                  dismissible: true
+            } %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row justify-content-between align-items-center">
+        <div class="col-12 text-center mt-8">
+           <h1>Your career starts here.</h1>
+            <form class="form-inline mx-auto text-center">
+                <select type="select" class="form-control form-control-lg w-20 m-1" id="" placeholder="category" >
+                  <option>All categories</option>
+                  <option>Traning</option>
+                  <option>Security & Safety</option>
+                  <option>Web developper</option>
+                  <option>Engeneering</option>
+                  <option>IT & Telecoms</option>
+                  <option>Tourism & Restaurants</option>
+                  <option>Iot</option>
+                  <option>Marketing & Communication</option>
+                  <option>Medical & Heeathcare</option>
+                  <option>Commercial Representation</option>
+                  <option>Financial</option>
+                </select>
+                <input type="text" class="form-control form-control-lg  w-40 m-1" id="" placeholder="What ?" >
+                <input type="text" class="form-control form-control-lg w-40 m-1" id="" placeholder="Where ?">
+                <button type="submit" class="btn btn-lg btn-secondary m-1"> Find</button>
+            </form>
+        </div>
+      </div>
+      <div class="row justify-content-between align-items-center">
+        <div class="col-md-8 mx-auto text-center">
+          <div class="btn-wrapper mt-5">
+            <% unless account_signed_in? %>
+            <a href="<%= new_account_registration_path %>" class="btn btn-sm btn-primary btn-icon mb-3 mb-sm-0">
+              <span class="btn-inner--icon"><i class="ni ni-single-02"></i></span>
+              <span class="btn-inner--text">Creer <span class="text-warning">un compte</span></span>
+            </a>
+              <button type="button" class="btn btn-sm btn-white btn-icon mb-3 mb-sm-0" data-toggle="modal" data-target="#modal-form"><span class="btn-inner--icon">
+                <i class="ni ni-user-run"></i></span>
+                <span class="btn-inner--text">Se connecter</span>
+              </button>
+              <% end %>
+              <div class="mt-5 text-black">
+                <small class="mb-0 mr-2 text-default">*proudly coded by</small> AFRICA SAMURAI
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="section my-4">
+      <div class=" card container px-0">
+        <div class="card-header bg-default p-0">
+          <p class="p-2 mb-0"> Browze <span class="text-dark text-weight-bold ">by categories</span></p>
+        </div>
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-md-4">
+              <p><i class="ni ni-check-bold"></i> All categories</p>
+              <p><i class="ni ni-check-bold"></i> Traning</p>
+              <p><i class="ni ni-check-bold"></i> Security & Safety</p>
+              <p><i class="ni ni-check-bold"></i> Web developper</p>
+            </div>
+            <div class="col-md-4">
+              <p><i class="ni ni-check-bold"></i> Engeneering</p>
+              <p><i class="ni ni-check-bold"></i> IT & Telecoms</p>
+              <p><i class="ni ni-check-bold"></i> Tourism & Restaurants</p>
+              <p><i class="ni ni-check-bold"></i> Iot</p>
+            </div>
+            <div class="col-4">
+              <p><i class="ni ni-check-bold"></i> Marketing & Communication</p>
+              <p><i class="ni ni-check-bold"></i> Medical & Heeathcare</p>
+              <p><i class="ni ni-check-bold"></i> Commercial Representation</p>
+              <p><i class="ni ni-check-bold"></i> Financial</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  </section>
+  <section class="section my-4">
+      <div class=" card container  px-0">
+        <div class="card-header bg-primary p-0">
+          <p class="p-2 mb-0"> Browze <span class="text-dark text-weight-bold "> by location</span></p>
+        </div>
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-md-4 text-sm">
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Benin</p></a>
+
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Cote d'ivoir</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Burkina faso</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Belgique</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Belgique</p></a>
+            </div>
+            <div class="col-md-4">
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Atlanta</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Tokyo</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Paris</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Nice</p></a>
+            </div>
+            <div class="col-4">
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Senegale</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> India</p></a>
+              <a href="#"><p class="text-dark"><i class="ni ni-check-bold"></i> Browze all city</p></a>
+            </div>
+        </div>
+        </div>
+    </div>
+  </section>
+  <section class="section my-6">
+        <div class="container col-9 mx-auto">
+          <div class="row justify-content-between align-items-center text-center">
+            <div class="col-3">
+              <div class="media d-flex align-items-center">
+                <div class="col-md-3 icon icon-shape bg-gradient-danger rounded-circle text-white">
+                  <i class="ni ni-palette"> </i>
+                </div>
+                <div class="col-5 media-body">
+                  <h6 class="heading text-dark mb-md-1">+ 2200 </h6>
+                  <p class="description d-none d-md-inline-block mb-0"> Jobs</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="media d-flex align-items-center">
+                <div class="col-md-3 icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-palette"> </i>
+                </div>
+                <div class="col-5 media-body">
+                  <h6 class="heading text-dark mb-md-1">+ 2200 </h6>
+                  <p class="description d-none d-md-inline-block mb-0"> Users</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="media d-flex align-items-center">
+                <div class="col-md-3 icon icon-shape bg-gradient-info rounded-circle text-white">
+                  <i class="ni ni-palette"> </i>
+                </div>
+                <div class="col-5 media-body">
+                  <h6 class="heading text-dark mb-md-1">+ 200 </h6>
+                  <p class="description d-none d-md-inline-block mb-0"> Company</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>

@@ -1,0 +1,11 @@
+<div class="card ">
+  <div class="card-header">
+    <h5>Dashbord</h5>
+  </div>
+  <div class="card-body transparent">
+    <a href="<%= compagnies_path if @compagny.present?%>"><p class="text-dark"><i class="ni ni-tag text-orange"></i> My Compagny</p></a>
+    <a href="<%= jobs_path %>"><p class="text-dark"><i class="ni ni-folder-17 text-orange"></i> My Jobs</p></a>
+    <a href="<%= approuval_path %>"><p class="text-dark"><i class="ni ni-zoom-split-in text-orange"></i> Pending approuval</p></a>
+    <a href="<%= mails_path %>"><p class="text-dark"><i class="ni ni-email-83 text-orange"></i> Mail box</p></a>
+  </div>
+</div>

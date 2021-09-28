@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <%= image_tag(@compagny.logo,style:"width: 150px;", class:"img-fluid") if @compagny.logo.attached? %>
+    <p><i class="ni ni-ungroup"></i><span class="h3"><%=@compagny.name%></span></p>
+    <%= sanitize "<a class='text-sm text-orange' target='_blank' href='#{@compagny.website}'><i class='ni ni-world-2'></i> Website</a>" if @compagny.website.present? %>
+    <%= sanitize " | <a class='text-sm text-orange' href='#{@compagny.facebook}'><i class='fa fa-facebook-square'> Facebook</a>" if @compagny.facebook.present? %>
+    <%= sanitize " | <a class='text-sm text-orange' href='#{@compagny.twitter}'><i class='fa fa-twitter-square'></i> twitter</a>" if @compagny.twitter.present? %>
+    <%= sanitize " | <a class='text-sm text-orange' href='#{@compagny.linkedin}'><i class='fa fa-linkedin'></i> linkedin </a>" if @compagny.linkedin.present?   %>
+  </div>
+  <div class="card-body">
+    <p><%= @compagny.description %></p>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <p><i class="ni ni-pin-3"></i>  <%= @compagny.country.name %></p>
+      </div>
+      <div class="col-md-6">
+        <p><i class="ni ni-square-pin"></i>  <%= @compagny.state.name if @compagny.state.present? %></p>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Update compagny", edit_compagny_path(@compagny), class:"btn btn-warning" %>
+</div>

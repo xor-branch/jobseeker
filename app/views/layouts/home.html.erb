@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <%= render 'shared/head' %>
+  <body class="bg-white">
+    <%= render 'home/shared/topnav' %>
+    <div class="main-content">
+      <%= render "home/shared/login"%>
+      <%= yield %>
+      <%=render "home/shared/footer" %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="card-header">
+    <p><i class="ni ni-briefcase-24"></i><span class="h5">  Compagny informations</span></p>
+  </div>
+  <div class="card-body">
+    <%=form_for @compagny, local: true do |f| %>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+          </div>
+          <%= f.text_field :name, class:"form-control", placeholder: "compagny name" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-image"></i></span>
+          </div>
+          <%= f.file_field :logo, class:"form-control"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <%= f.text_area :description, class:"form-control", cols:"80", rows:"8", placeholder:"Description"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-square-pin"></i></span>
+          </div>
+          <label for=""> Country</label>
+          <%= f.collection_select :country_id, Country.order(:name), :id, :name, include_blank: true, class:"form-control",prompt:" choose Country"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+          </div>
+          <label for=""> State</label>
+          <%= f.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: true, class:"form-control", prompt:"State" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-world-2"></i></span>
+          </div>
+          <%= f.text_field :website, class:"form-control", placeholder:"website"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-facebook-square"></i></span>
+          </div>
+          <%= f.text_field :facebook, class:"form-control", placeholder:"Facebook"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-linkedin"></i></span>
+          </div>
+          <%= f.text_field :linkedin, class:"form-control", placeholder:"Linkedin"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-merge input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-twitter-square"></i></span>
+          </div>
+          <%= f.text_field :twitter, class:"form-control", placeholder:"Twitter"%>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-warning my-4">Update Informations</button>
+      </div>
+    <% end %>
+  </div>
+</div>
