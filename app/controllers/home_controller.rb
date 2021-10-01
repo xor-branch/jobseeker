@@ -7,56 +7,15 @@ class HomeController < ApplicationController
   def homepage
   end
 
-  def mycompagny
 
-  end
-
-  def new_compagny
-    @compagny = Compagny.new
-  end
-
-  def create_compagny
-    @compagny = Compagny.new(compagny_params)
-    @compagny.account_id = current_account.id
-    if @compagny.save
-      flash.now[:alert] = "Compagny created sucessfull "
-      redirect_to mycompagny_path
-    end
-  end
-
-  def edit_compagny
-  end
-
-  def update_compagny
-    if @compagny.update(compagny_params)
-      flash.now[:alert] = "Compagny update_compagny sucessfull "
-      redirect_to mycompagny_path
-    end
+  #browse jobs
+  def browse
+    @jobs = Post.all
   end
 
   def mail
   end
 
-
-  #liste of jobs
-  def jobs
-  end
-
-  # create job
-  def create_job
-  end
-
-  #show_job
-  def show_job
-  end
-
-  #show_job
-  def show_job
-  end
-
-  #browse jobs
-  def browse
-  end
 
   private
   def compagny_params

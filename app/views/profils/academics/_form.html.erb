@@ -1,0 +1,49 @@
+
+  <%= form_for @academic, local: true, remote: true do |f| %>
+      <div class="card-header">
+        <div class="row">
+          <div class="col-12">
+            <%= render partial: 'shared/alerts/errors', locals: { resource: @academic} %>
+          </div>
+        </div>
+      </div>
+    <div class="form-group">
+      <label class="text-sm" for="">Academic degree name</label>
+      <div class="input-group input-group-merge input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+        </div>
+        <%= f.text_field :name, class:"form-control", placeholder:"Experience name" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="text-sm" for="">Description competences that you get by this degree</label>
+      <div class="input-group input-group-merge input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+        </div>
+        <%= f.text_area :description, class:"form-control", placeholder:"Description competences that you get by this degree " %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="text-sm" for="">Year of degree obtention</label>
+      <div class="input-group input-group-merge input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+        </div>
+        <%= f.date_field :obtention_year, class:"form-control", placeholder:"Year of degree obtention" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="text-sm" for="">School which deliver your Diploma</label>
+      <div class="input-group input-group-merge input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+        </div>
+        <%= f.text_field :school, class:"form-control", placeholder:"School which deliver your Diploma" %>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-warning my-4">submit</button>
+    </div>
+  <% end %>

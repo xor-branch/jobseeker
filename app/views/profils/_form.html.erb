@@ -1,0 +1,138 @@
+<div class="section mt-6">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <p><i class="ni ni-briefcase-24"></i><span class="h5">  Your informations</span></p>
+            </div>
+            <div class="card-body">
+              <%= form_for @profil, local: true do |f| %>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+                    </div>
+                    <%= f.text_field :name, class:"form-control", placeholder: "Your name" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+                    </div>
+                    <%= f.text_field :speciality, class:"form-control", placeholder: "Post a brief description of your speciality" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-image"></i></span>
+                    </div>
+                    <%= f.file_field :avatar, class:"form-control"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <%= f.text_area :bio, class:"form-control", placeholder:"Post a brief bio to introduce your self..."%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-square-pin"></i></span>
+                    </div>
+                    <label for=""> Country</label>
+                    <%= f.collection_select :country_id, Country.order(:name), :id, :name, include_blank: true, class:"form-control",prompt:" choose Country"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                    </div>
+                    <label for=""> State</label>
+                    <%= f.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: true, class:"form-control", prompt:" choose State" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-world-2"></i></span>
+                    </div>
+                    <%= f.number_field :telephone, class:"form-control", placeholder:"your telephone"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-facebook-square"></i></span>
+                    </div>
+                    <%= f.text_field :facebook, class:"form-control", placeholder:"Your Facebook"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-linkedin"></i></span>
+                    </div>
+                    <%= f.text_field :linkedin, class:"form-control", placeholder:"Your Linkedin"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-twitter-square"></i></span>
+                    </div>
+                    <%= f.text_field :twitter, class:"form-control", placeholder:"Your Twitter"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class='fa fa-github'></i></span>
+                    </div>
+                    <%= f.text_field :github, class:"form-control", placeholder:"Your github"%>
+                  </div>
+                </div>
+                <div class="text-sm text-center">
+                  <%= f.check_box :terms_use %>
+                  <label>By continuing on this website, you accept our <strong class="text-oragne">Terms of Use</strong></label>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-warning my-4">Update Informations</button>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="">
+            <div class="">
+              <h2 class="heading text-center text-warning">Add your Profil</h2>
+              <p class="description d-none d-md-inline-block mb-2 p-3 text-center text-sm">
+                Add your profile to introduce yourself to companies is on Jobseeker.
+                Increase your chances of having a great career or solid experiences with companies
+              </p>
+            </div>
+        </div>
+        <div class="card">
+          <div class="card-header bg-primary py-2 text-center">
+            <p class="mb-0"><strong>How to find quickly a mission or job?</strong></p>
+          </div>
+          <div class="card-body">
+            <p class="text-sm mb-0"><i class="ni ni-check-bold"></i> Post a brief description of your speciality</p>
+            <p class="text-sm mb-0"><i class="ni ni-check-bold"></i> Make sure you post a good image </p>
+            <p class="text-sm mb-0"><i class="ni ni-check-bold"></i> Add your location </p>
+            <p class="text-sm mb-0"><i class="ni ni-check-bold"></i> Add your socials medias link </p>
+            <p class="text-sm mb-0"><i class="ni ni-check-bold"></i> Post a brief bio to introduce your self</p>
+            <p class="text-sm mb-0"><i class="ni ni-check-bold"></i> Check the post before publish</p>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>

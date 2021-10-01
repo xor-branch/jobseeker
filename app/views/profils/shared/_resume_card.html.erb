@@ -1,0 +1,101 @@
+  <div class="card">
+    <div class="card-header">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3 class="mb-0"><%=@profil.name %></h3>
+          <%=link_to "Public resume", profil_path(@profil), class:"text-sm badge badge-pill badge-secondary" %>
+        </div>
+      </div>
+    </div>
+    <div class="card-body ">
+      <div class="row">
+        <div id="personal_info" class="col">
+          <%= render "profils/personal/personal" %>
+        </div>
+      </div>
+      <div class="separateur"></div>
+      <div class="row">
+        <div id="skill" class="col">
+          <%= render "profils/skills/skill" %>
+          <div id="skill_form" class="col"></div>
+        </div>
+        <div class="col-12">
+          <div class=" border">
+            <div class="d-flex flex-column justify-content-center text-center">
+              <a type="button" type="button" data-remote="true" data-method="get" href="<%= new_skill_path %>">
+                <h5 class=" text-orange py-1"> <i class="fa fa-plus text-orange"></i> Add main skills </h5>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separateur"></div>
+      <div class="row">
+        <div id="experience" class="col">
+          <%= render "profils/experiences/experience" %>
+          <div id="experience_form" class="col"></div>
+        </div>
+
+        <div class="col-12">
+          <div class=" border">
+            <div class="d-flex flex-column justify-content-center text-center">
+              <a type="button" type="button" data-remote="true" data-method="get" href="<%= new_experience_path %>">
+                <h5 class=" text-orange py-1"> <i class="fa fa-plus text-orange"></i> Add main experience </h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="separateur"></div>
+        <div class="row">
+          <div id="academic" class="col">
+            <%= render "profils/academics/academic" %>
+            <div id="academic_form" class="col"></div>
+          </div>
+
+          <div class="col-12">
+            <div class=" border">
+              <div class="d-flex flex-column justify-content-center text-center">
+                <a type="button" type="button" data-remote="true" data-method="get" href="<%= new_academic_path %>">
+                  <h5 class=" text-orange py-1"> <i class="fa fa-plus text-orange"></i> Add academic degrees </h5>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="separateur"></div>
+          <div class="row">
+            <div id="portfolio" class="col">
+              <%= render "profils/portfolios/portfolio" %>
+              <div id="portfolio_form" class="col"></div>
+            </div>
+
+            <div class="col-12">
+              <div class=" border">
+                <div class="d-flex flex-column justify-content-center text-center">
+                  <a type="button" type="button" data-remote="true" data-method="get" href="<%= new_portfolio_path %>">
+                    <h5 class=" text-orange py-1"> <i class="fa fa-plus text-orange"></i> Add Portfolio </h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="separateur"></div>
+            <div class="row">
+              <div id="hobby" class="col">
+                <%= render "profils/hobbies/hobby" %>
+                <div id="hobby_form" class="col"></div>
+              </div>
+
+              <div class="col-12">
+                <div class=" border">
+                  <div class="d-flex flex-column justify-content-center text-center">
+                    <a type="button" type="button" data-remote="true" data-method="get" href="<%= new_hobby_path %>">
+                      <h5 class=" text-orange py-1"> <i class="fa fa-plus text-orange"></i> Add hobby </h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              </div>
+    </div>
+  </div>

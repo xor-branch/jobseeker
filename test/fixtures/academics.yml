@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  obtention_year: 2021-10-01
+  school: MyString
+  profil: one
+
+two:
+  name: MyString
+  description: MyText
+  obtention_year: 2021-10-01
+  school: MyString
+  profil: two

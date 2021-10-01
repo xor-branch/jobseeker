@@ -2,11 +2,19 @@
 <html>
   <%= render 'shared/head' %>
   <body class="bg-white">
-    <%= render 'home/shared/topnav' %>
+    <% if account_signed_in?%>
+      <% if current_account.entreprise == true %>
+          <%= render 'compagnies/shared/topnav' %>
+      <% else %>
+        <%= render 'profils/shared/topnav' %>
+      <% end %>
+    <% else %>
+      <%= render 'home/shared/topnav' %>
+    <% end %>
     <div class="main-content">
-      <%= render "home/shared/login"%>
+      <%= render "shared/login"%>
       <%= yield %>
-      <%=render "home/shared/footer" %>
+      <%=render "shared/footer" %>
     </div>
   </body>
 </html>

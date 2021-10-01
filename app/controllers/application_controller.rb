@@ -12,6 +12,20 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(account)
     root_path
   end
+  
+  def isJobseeker
+    if !current_account.jobseeker == true
+      redirect_to root_path
+      flash.now[:danger] = "Vous devez être une conpagny"
+    end
+  end
+
+  def haveProfile
+    if !@profil.present?
+      redirect_to new_profil_path
+      flash.now[:danger] = "Vous devez renseigner votre profile"
+    end
+  end
 
   protected
 

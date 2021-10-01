@@ -1,0 +1,9 @@
+<% if current_account.jobseeker %>
+  <div class="card-header bg-white py-2 text-center">
+    <% if @account_apply.present? %>
+      <a type="button" class="btn-primary mb-0 text-white px-4 py-1"> Yet Apply</a>
+    <% else %>
+      <%= link_to "Apply",applies_path(post_id: @post.id), method: :post, remote: true, class: "btn-warning mb-0 text-white px-4 py-1" %>
+    <% end %>
+  </div>
+<% end %>

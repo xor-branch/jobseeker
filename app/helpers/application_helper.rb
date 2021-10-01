@@ -10,4 +10,8 @@ module ApplicationHelper
   def devise_mapping
   @devise_mapping ||= Devise.mappings[:account]
   end
+
+  def deletion_modal_id(item)
+    "deletion-modal-bug-#{item.id}"
+  end
 end

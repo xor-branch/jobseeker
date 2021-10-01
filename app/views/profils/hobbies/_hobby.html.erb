@@ -1,0 +1,29 @@
+<% if !@hobbies.empty? %>
+  <div class="resume_card">
+    <h4 class="heading-small text-purple mb-4"><i class="ni ni-note-03"></i> Hobbies</h4>
+  </div>
+  <ol>
+    <% @hobbies.each do |hobby| %>
+    <li><%= hobby.name %></li>
+    <div class="row">
+      <div class="col">
+        <a class="btn btn-primary btn-sm" data-remote="true" data-method="get" href="<%= edit_hobby_path(hobby) %>"><%= fa_icon 'edit' %> Edit</a>
+        <a class="btn btn-primary btn-sm" data-toggle="modal"
+          data-target="#<%= deletion_modal_id(hobby) %>">
+          <%= fa_icon 'trash' %> Delete
+        </a>
+        <%= render partial: 'shared/modals/confirmation', locals: {
+          id: deletion_modal_id(hobby),
+          title: 'Are you sure?',
+          heading_1: "DANGER",
+          heading_2: "You're are deleted your personnal infor:",
+          path: hobby_path(hobby),
+          method: 'delete',
+          confirm_button: 'Delete'
+        } %>
+      </div>
+    </div>
+     <div class="separateur"></div>
+     <% end %>
+  </ol>
+<% end %>

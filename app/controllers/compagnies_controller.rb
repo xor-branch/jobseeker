@@ -3,6 +3,7 @@ class CompagniesController < ApplicationController
   before_action :isCompagny
   before_action :set_compagny, only: [:index, :edit, :update, :show]
   before_action :haveCompagny, only: [:index]
+
   layout 'dashboard'
 
   def index
@@ -46,7 +47,6 @@ class CompagniesController < ApplicationController
   end
 
   def haveCompagny
-
     if !@compagny.present?
       redirect_to new_compagny_path
       flash.now[:danger] = "Vous devez renseigner votre conpagny"

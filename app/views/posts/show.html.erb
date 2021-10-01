@@ -1,0 +1,49 @@
+<div class="section mt-6">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <%= image_tag(@compagny.logo,style:"width: 150px;", class:"img-fluid") if @compagny.logo.attached? %>
+              <p><i class="ni ni-ungroup"></i><span class="h3"><%= @compagny.name %></span></p>
+              <%= sanitize "<a class='text-sm text-orange' target='_blank' href='#{@compagny.website}'><i class='ni ni-world-2'></i> Website</a>" if @compagny.website.present? %>
+              <%= sanitize " | <a class='text-sm text-orange' href='#{@compagny.facebook}'><i class='fa fa-facebook-square'> Facebook</a>" if @compagny.facebook.present? %>
+              <%= sanitize " | <a class='text-sm text-orange' href='#{@compagny.twitter}'><i class='fa fa-twitter-square'></i> twitter</a>" if @compagny.twitter.present? %>
+              <%= sanitize " | <a class='text-sm text-orange' href='#{@compagny.linkedin}'><i class='fa fa-linkedin'></i> linkedin </a>" if @compagny.linkedin.present?   %>
+            </div>
+            <div class="card-body">
+              <p> <%= @compagny.description %></p>
+              <hr>
+              <h4>Job description</h4>
+              <p><%= @post.description %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div id="apply_button">
+              <%= render "posts/apply_button" %>
+            </div>
+            <div class="card-body">
+              <small for="">Type of Job</small>
+              <p class="text-md mb-0"><i class="ni ni-check-bold"></i><%= @post.jobType %></p>
+              <hr class="my-1">
+              <small for="">Min Salary</small>
+              <p class="text-md mb-0"><i class="ni ni-check-bold"></i> <%= @post.min_salary %><span><%= @post.frequence %></span></p>
+              <hr class="my-1">
+              <small for="">Location </small>
+              <p class="text-md mb-0"><i class="ni ni-check-bold"></i><%= @post.state.name %></p>
+              <hr class="my-1">
+              <small for="">Deadline </small>
+              <p class="text-md mb-0"><i class="ni ni-check-bold"></i><%= @post.deadline %></p>
+              <hr class="my-1">
+              <small for=""> Applicant count</small>
+              <p class="text-md mb-0"><i class="ni ni-check-bold"></i>15 applicants</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

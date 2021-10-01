@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <%= render 'shared/head' %>
+  <body>
+    <%= render 'profils/shared/topnav' %>
+    <div class="main-content" id="panel">
+      <div class="container">
+          <div class="col-12 mt-6">
+            <div class="row">
+              <div class="col-md-4">
+                <%= render "profils/shared/sidebar" %>
+              </div>
+              <div class="col-md-8">
+                <%= yield %>
+              </div>
+          </div>
+        </div>
+          <%=render "shared/footer" %>
+      </div>
+    </div>
+  </body>
+</html>

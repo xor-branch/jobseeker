@@ -1,0 +1,32 @@
+<%# if !@skills.empty? %>
+  <div class="resume_card">
+    <h4 class="heading-small text-purple mb-4"><i class="ni ni-vector"></i> Main Skills</h4>
+  </div>
+  <ol>
+    <% @skills.each do |skill| %>
+    <div class="row">
+      <div class="col">
+        <a class="btn btn-primary btn-sm" data-remote="true" data-method="get" href="<%= edit_skill_path(skill) %>"><%= fa_icon 'edit' %> Edit</a>
+        <a class="btn btn-primary btn-sm" data-toggle="modal"
+          data-target="#<%= deletion_modal_id(skill) %>">
+          <%= fa_icon 'trash' %> Delete
+        </a>
+        <%= render partial: 'shared/modals/confirmation', locals: {
+          id: deletion_modal_id(skill),
+          title: 'Are you sure?',
+          heading_1: "DANGER",
+          heading_2: "You're are deleted your personnal infor:",
+          path: skill_path(skill),
+          method: 'delete',
+          confirm_button: 'Delete'
+        } %>
+      </div>
+    </div>
+    <li><%= skill.name %></li>
+    <small>
+      <%= skill.description %>
+    </small>
+     <div class="separateur"></div>
+     <% end %>
+  </ol>
+<%# end %>

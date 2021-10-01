@@ -8,41 +8,15 @@
               <p><i class="ni ni-ungroup"></i><span class="h3"> Lastest jobs</span></p>
             </div>
             <div class="card-body">
-              <h4>Front-end developper</h4>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="text-sm text-orange"><i class="ni ni-watch-time"></i> Part-time</a>
-              | <a class="text-sm text-orange"><i class="ni ni-square-pin"></i> Location</a>
-              | <a class="text-sm text-orange"><i class="ni ni-money-coins"></i> 25$ per hour</a>
-              | <a class="text-sm text-orange"><i class="ni ni-time-alarm"></i> Deadline</a>
+              <% @jobs.each do |job|  %>
+              <h4><%= job.title %></h4>
+              <p><%= job.description %></p>
+              <a class="text-sm text-orange"><i class="ni ni-watch-time"></i><%= job.jobType %></a>
+              | <a class="text-sm text-orange"><i class="ni ni-square-pin"></i> <%= job.state.name %></a>
+              | <a class="text-sm text-orange"><i class="ni ni-money-coins"></i><%= job.min_salary %>  <%= job.jobFrequence %></a>
+              | <a class="text-sm text-orange"><i class="ni ni-time-alarm"></i><%= job.deadline %></a>
               <hr>
-              <h4>Front-end developper</h4>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="text-sm text-orange"><i class="ni ni-watch-time"></i> Part-time</a>
-              | <a class="text-sm text-orange"><i class="ni ni-square-pin"></i> Location</a>
-              | <a class="text-sm text-orange"><i class="ni ni-money-coins"></i> 25$ per hour</a>
-              | <a class="text-sm text-orange"><i class="ni ni-time-alarm"></i> Deadline</a>
-              <hr>
-              <h4>Front-end developper</h4>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="text-sm text-orange"><i class="ni ni-watch-time"></i> Part-time</a>
-              | <a class="text-sm text-orange"><i class="ni ni-square-pin"></i> Location</a>
-              | <a class="text-sm text-orange"><i class="ni ni-money-coins"></i> 25$ per hour</a>
-              | <a class="text-sm text-orange"><i class="ni ni-time-alarm"></i> Deadline</a>
-              <hr>
-              <h4>Front-end developper</h4>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="text-sm text-orange"><i class="ni ni-watch-time"></i> Part-time</a>
-              | <a class="text-sm text-orange"><i class="ni ni-square-pin"></i> Location</a>
-              | <a class="text-sm text-orange"><i class="ni ni-money-coins"></i> 25$ per hour</a>
-              | <a class="text-sm text-orange"><i class="ni ni-time-alarm"></i> Deadline</a>
-              <hr>
-              <h4>Front-end developper</h4>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="text-sm text-orange"><i class="ni ni-watch-time"></i> Part-time</a>
-              | <a class="text-sm text-orange"><i class="ni ni-square-pin"></i> Location</a>
-              | <a class="text-sm text-orange"><i class="ni ni-money-coins"></i> 25$ per hour</a>
-              | <a class="text-sm text-orange"><i class="ni ni-time-alarm"></i> Deadline</a>
-              <hr>
+              <% end %>
             </div>
             <div class="text-center mb-3">
               <button type="button" name="button" class="btn-warning">Load more</button>

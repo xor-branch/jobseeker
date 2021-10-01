@@ -1,0 +1,193 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-xl-3 order-xl-1">
+      <div class="card card-profile">
+        <%= image_tag "theme/img-1-1000x600.jpg", class: "card-img-top", alt: "Image placeholder" %>
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="#">
+                <%= image_tag(@profil.avatar, class: 'rounded-circle') %>
+              </a>
+            </div>
+          </div>
+        </div>
+      <div class="card-body pt-6">
+        <div class="col">
+              <%# if @profil.asc_certificat == true %>
+              <div class="row justify-content-center">
+                <p class="text-sm badge badge-pill badge-secondary">Certified by <span class="h4 text-purple">Dive Into Code</span></p>
+              </div>
+              <% #end %>
+              <div class="row justify-content-center">
+                <%= sanitize "<a class='text-sm text-orange mx-2' target='_blank' href='#{@profil.github}'>
+                  <i class='fa fa-github'></i></a>" if @profil.github.present? %>
+                <%= sanitize "  <a class='text-sm text-orange mx-2' href='#{@profil.facebook}'>
+                  <i class='fa fa-facebook-square'></a>" if @profil.facebook.present? %>
+                <%= sanitize "  <a class='text-sm text-orange mx-2' href='#{@profil.twitter}'>
+                  <i class='fa fa-twitter-square'></i></a>" if @profil.twitter.present? %>
+                <%= sanitize "  <a class='text-sm text-orange mx-2' href='#{@profil.linkedin}'>
+                  <i class='fa fa-linkedin'></i></a>" if @profil.linkedin.present?   %>
+              </div>
+          </div>
+          <div class="text-center">
+            <h5 class="h3">
+              <%= @profil.name %>
+            </h5>
+            <div class="h5 font-weight-300">
+              <%= @profil.account.email %>
+            </div>
+            <div class="h5 mt-4 text-center">
+              <%= @profil.bio %>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-xl-6 order-xl-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0"><%=@profil.name %></h3>
+              </div>
+            </div>
+          </div>
+          <div class="card-body ">
+            <div class="row">
+                <div class="resume_card">
+                  <h4 class="heading-small text-purple mb-4"><i class="ni ni-single-copy-04"></i> <%= @profil.name %> personal informations</h4>
+                </div>
+                  <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            gender
+                          </th>
+                          <td>
+                            <%= @personal.genderType %>
+                          </td>
+                        </tr>
+                          <tr>
+                            <th scope="row">
+                              Sitauation mariatale
+                            </th>
+                            <td>
+                              <%= @personal.marital %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              Nombre d'enfants
+                            </th>
+                            <td>
+                              <%= @personal.children %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              Date de naissance
+                            </th>
+                            <td>
+                              <%= @personal.birth_day %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              Langue
+                            </th>
+                            <td>
+                              <%= @personal.language %>
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+            <div class="separateur"></div>
+            <div class="row">
+              <div class="resume_card">
+                <h4 class="heading-small text-purple mb-4"><i class="ni ni-vector"></i> Main Skills</h4>
+              </div>
+              <ol>
+                <% @skills.each do |skill| %>
+                <li><%= skill.name %></li>
+                <small>
+                  <%= skill.description %>
+                </small>
+                 <div class="separateur"></div>
+                 <% end %>
+              </ol>
+            </div>
+            <div class="separateur"></div>
+            <div class="row">
+              <div class="resume_card">
+                <h4 class="heading-small text-purple mb-4"><i class="ni ni-spaceship"></i> Main experiences</h4>
+              </div>
+              <ol>
+                <% @experiences.each do |experience| %>
+                <li><%= experience.name %></li>
+                <div class="">
+                  <small>
+                    <%= experience.description %>
+                  </small>
+                </div>
+                <span class="text-warning text-sm"><i class="ni ni-calendar-grid-58"></i> <%= experience.duration %> Year</span>
+                 <% end %>
+              </ol>
+            </div>
+            <div class="separateur"></div>
+            <div class="row">
+              <div class="resume_card">
+                <h4 class="heading-small text-purple mb-4"> <i class="ni ni-paper-diploma"></i> Accademic training</h4>
+              </div>
+              <ol>
+                <% @academics.each do |academic| %>
+                <li><%= academic.name %></li>
+                <div class="">
+                <small>
+                  <%= academic.description %>
+                </small>
+                </div>
+                  <span class="text-warning text-sm"><i class="ni ni-calendar-grid-58"></i> <%= academic.obtention_year %></span>
+                  <span class="text-warning text-sm ml-3"><i class="ni ni-hat-3"></i> <%= academic.school %></span>
+                   <% end %>
+              </ol>
+            </div>
+            <div class="separateur"></div>
+            <div class="row">
+              <div class="resume_card">
+                <h4 class="heading-small text-purple mb-4"><i class="ni ni-ni-palette"></i> Portfolio </h4>
+              </div>
+            <ol>
+              <% @portfolios.each do |portfolio| %>
+              <li><a class="text-purple" href="<%= portfolio.portfolio_link %>"><%= portfolio.name %></a></li>
+              <div class="">
+                <small>
+                  <%= portfolio.description %>
+                </small>
+              </div>
+              <div class="separateur"></div>
+             <% end %>
+            </ol>
+            </div>
+            <div class="separateur"></div>
+            <div class="row">
+                <div class="resume_card">
+                  <h4 class="heading-small text-purple mb-4"><i class="ni ni-note-03"></i> Hobbies</h4>
+                </div>
+                <ol>
+                  <% @hobbies.each do |hobby| %>
+                  <li><%= hobby.name %></li>
+                   <% end %>
+                </ol>
+            </div>
+          </div>
+      </div>
+    </div>
+      <div class="col-xl-3 order-xl-3">
+        <%= render 'profils/shared/summary_job' %>
+      </div>
+    </div>
+  </div>

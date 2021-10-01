@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header border-0">
+    <div class="row align-items-center">
+      <div class="col">
+        <p><i class="ni ni-folder-17"></i><span class="h5"> My jobs</span></p>
+      </div>
+      <div class="col text-right">
+        <a href="<%= new_post_path %>" class="btn btn-sm btn-warning">
+          <i class="ni ni-fat-add"></i> Post job
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <!-- Projects table -->
+    <table class="table align-items-center table-flush">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Job title</th>
+          <th scope="col">Candidates</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <th scope="row">
+              <%= post.title %>
+            </th>
+            <td>
+              200 Candidates
+            </td>
+            <td>
+              <a href="<%=post_path(post) %>" class="text-orange">Details</a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

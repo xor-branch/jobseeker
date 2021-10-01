@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
   var states;
 
   $('#compagny_state_id').parent().hide();
@@ -18,5 +18,4 @@ $(document).ready(function() {
       return $('#compagny_state_id').parent().hide();
     }
   });
-
-}).call(this);
+})

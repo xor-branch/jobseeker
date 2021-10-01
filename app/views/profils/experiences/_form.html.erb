@@ -1,0 +1,40 @@
+
+  <%= form_for @experience, local: true, remote: true do |f| %>
+      <div class="card-header">
+        <div class="row">
+          <div class="col-12">
+            <%= render partial: 'shared/alerts/errors', locals: { resource: @experience} %>
+          </div>
+        </div>
+      </div>
+    <div class="form-group">
+      <label class="text-sm" for="">Experience name</label>
+      <div class="input-group input-group-merge input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+        </div>
+        <%= f.text_field :name, class:"form-control", placeholder:"Experience name" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="text-sm" for="">Experience description</label>
+      <div class="input-group input-group-merge input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+        </div>
+        <%= f.text_area :description, class:"form-control", placeholder:"Experience description, " %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="text-sm" for="">Experience description</label>
+      <div class="input-group input-group-merge input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-align-left-2"></i></span>
+        </div>
+        <%= f.number_field :duration, class:"form-control", placeholder:"Experience duration (year)" %>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-warning my-4">submit</button>
+    </div>
+  <% end %>

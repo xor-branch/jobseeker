@@ -1,0 +1,36 @@
+<% if !@experiences.empty? %>
+  <div class="resume_card">
+    <h4 class="heading-small text-purple mb-4"><i class="ni ni-spaceship"></i> Main experiences</h4>
+  </div>
+  <ol>
+    <% @experiences.each do |experience| %>
+    <li><%= experience.name %></li>
+    <div class="row">
+      <div class="col">
+        <a class="btn btn-primary btn-sm" data-remote="true" data-method="get" href="<%= edit_experience_path(experience) %>"><%= fa_icon 'edit' %> Edit</a>
+        <a class="btn btn-primary btn-sm" data-toggle="modal"
+          data-target="#<%= deletion_modal_id(experience) %>">
+          <%= fa_icon 'trash' %> Delete
+        </a>
+        <%= render partial: 'shared/modals/confirmation', locals: {
+          id: deletion_modal_id(experience),
+          title: 'Are you sure?',
+          heading_1: "DANGER",
+          heading_2: "You're are deleted your personnal infor:",
+          path: experience_path(experience),
+          method: 'delete',
+          confirm_button: 'Delete'
+        } %>
+      </div>
+    </div>
+    <div class="">
+      <small>
+        <%= experience.description %>
+      </small>
+    </div>
+
+    <span class="text-warning text-sm"><i class="ni ni-calendar-grid-58"></i> <%= experience.duration %> Year</span>
+     <div class="separateur"></div>
+     <% end %>
+  </ol>
+<% end %>

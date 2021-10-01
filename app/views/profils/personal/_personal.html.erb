@@ -1,0 +1,81 @@
+<% if @personal.present? %>
+<div class="col-12">
+  <div class="resume_card">
+    <h4 class="heading-small text-purple mb-4"><i class="ni ni-single-copy-04"></i> Personal informations</h4>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary btn-sm" data-remote="true" data-method="get" href="<%= edit_personal_path(@personal) %>"><%= fa_icon 'edit' %> Edit</a>
+      <a class="btn btn-primary btn-sm" data-toggle="modal"
+        data-target="#<%= deletion_modal_id(@personal) %>">
+        <%= fa_icon 'trash' %> Delete
+      </a>
+      <%= render partial: 'shared/modals/confirmation', locals: {
+        id: deletion_modal_id(@personal),
+        title: 'Are you sure?',
+        heading_1: "DANGER",
+        heading_2: "You're are deleted your personnal infor:",
+        path: personal_path(@personal),
+        method: 'delete',
+        confirm_button: 'Delete'
+      } %>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table align-items-center table-flush">
+      <tbody>
+        <tr>
+          <th scope="row">
+            gender
+          </th>
+          <td>
+            <%= @personal.genderType %>
+          </td>
+        </tr>
+          <tr>
+            <th scope="row">
+              Sitauation mariatale
+            </th>
+            <td>
+              <%= @personal.marital %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Nombre d'enfants
+            </th>
+            <td>
+              <%= @personal.children %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Date de naissance
+            </th>
+            <td>
+              <%= @personal.birth_day %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Langue
+            </th>
+            <td>
+              <%= @personal.language %>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% else %>
+<div class="col-12">
+  <div class=" border">
+    <div class="d-flex flex-column justify-content-center text-center">
+      <a type="button" data-remote="true" data-method="get" href="<%= new_personal_path %>">
+        <h5 class=" text-orange py-1"> <i class="fa fa-plus text-orange"></i> Add Personal informations </h5>
+      </a>
+    </div>
+  </div>
+</div>
+<% end %>

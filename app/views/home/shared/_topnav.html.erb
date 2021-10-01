@@ -24,8 +24,8 @@
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <li class="nav-item">
-          <a href="<%= browse_path %>" class="nav-link" role="button">
-            <span class="nav-link-inner--text" title="Browse job"><i class="ni ni-bullet-list-67"></i> Browze Jobs</span>
+          <a href="/" class="nav-link" role="button">
+            <span class="nav-link-inner--text" title="Browse job"><i class="ni ni-shop"></i>Home</span>
           </a>
         </li>
       </ul>
@@ -54,7 +54,7 @@
               <i class="ni ni-tag"></i>
               <span title="My Compagny">My Compagny</span>
             </a>
-            <a href="<%= jobs_path %>" class="dropdown-item">
+            <a href="<%= posts_path %>" class="dropdown-item">
               <i class="ni ni-folder-17"></i>
               <span title="My jobs">My jobs</span>
             </a>
@@ -75,11 +75,11 @@
         </li>
         <% end %>
         <li class="nav-item d-none d-sm-block">
-          <a href="<%= create_job_path %>" class="btn btn-md btn-warning btn-icon">
+          <a href="<%= new_account_registration_path %>" class="btn btn-md btn-warning btn-icon">
             <span class="btn-inner--icon">
-              <i class="ni ni-fat-add"></i>
+              <i class="ni ni-spaceship"></i>
             </span>
-            <span class="nav-link-inner--text" title="post job">Post Job</span>
+            <span class="nav-link-inner--text" title="post job">Get started free</span>
           </a>
         </li>
       </ul>

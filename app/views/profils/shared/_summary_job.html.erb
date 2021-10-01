@@ -1,0 +1,36 @@
+<div class="card card-profile">
+  <%= image_tag "img/ivancik.jpg", class: "card-img-top", alt: "Image placeholder" %>
+  <div class="card-header text-center border-0 mt--4 pb-2">
+    <div class="d-flex justify-content-between">
+      <p class="h4 text-center text-warning"> Your dream career closer than you think...</p>
+      <hr>
+    </div>
+  </div>
+  <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Job according your profile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @lastest_job.each do |job| %>
+              <tr>
+                <td scope="row" class="px-0 pb-0">
+                  <div class="col">
+                    <span><%=link_to job.title.truncate(25), job, class:"text-purple" %> </span>
+                  </div>
+                  <div class="m-1">
+                    <small class="mb-1"><i class="ni ni-check-bold"></i><%= job.jobType %></small>
+                    | <small class="mb-1"><i class="ni ni-money-coins"></i> <%= job.min_salary %> <%= job.jobFrequence %></small>
+                    | <small class="mb-1"><i class="ni ni-pin-3"></i><%= job.state.name %></small>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
